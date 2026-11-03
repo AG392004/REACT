@@ -7,27 +7,34 @@
 // import  CounterProvider from "./Component/Hook";
 // import Sample from "./Component/Sample";
 // import See from "./Component/Usecontext";
-import ThemeProvider from "./Component/Usecontext";
+// import ThemeProvider from "./Component/Usecontext";
+// import Clock from "./Component/Effect";
+// import FetchProd from "./Component/Effect";
+import { Route, Routes } from "react-router-dom";
+import StudentDetails from "./pages/StudentDetails";
+import Register from "./pages/Register";
 
 
-function App() 
-{
-  return (
-    <div>
-      {/* <File/> */}
-      {/* <Student/> */}
-      {/* <StudentName/> */}
-      {/* <StudentCard/> */}
-      {/* <Navbar/> */}
-      {/* <Sample/> */}
-      {/* <Hook/> */}
-      {/* <CounterProvider/> */}
-      {/* <See/> */}
-      <ThemeProvider/>
-    </div>
-  );
-}
-export default App;
+// function App() 
+// {
+//   return (
+//     <div>
+//       {/* <File/> */}
+//       {/* <Student/> */}
+//       {/* <StudentName/> */}
+//       {/* <StudentCard/> */}
+//       {/* <Navbar/> */}
+//       {/* <Sample/> */}
+//       {/* <Hook/> */}
+//       {/* <CounterProvider/> */}
+//       {/* <See/> */}
+//       {/* <ThemeProvider/> */}
+//       {/* <Clock/> */}
+//       {/* <FetchProd/> */}
+//     </div>
+//   );
+// }
+// export default App;
 
 
 
@@ -41,3 +48,20 @@ export default App;
 //   );
 // }
 // export default App;
+
+
+function App(){
+  const [student,setStudent] = useState(null);
+  return (
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/register' element={<Register setStudent={setStudent}/>}/>
+        <Route path='/student' element={<StudentDetails student={student}/>}/>
+  
+      </Routes>
+    </div>
+  )
+}
+export default App

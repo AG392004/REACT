@@ -2,17 +2,20 @@
 // StudentCard StudentName Footer App imports and combines all the components. 
 // Nest StudentName inside StudentCard.
 
-
+import { Link } from "react-router-dom";
 import StudentCard from "./StudentCard";
 function Navbar()
 {
     return(
         <>
         <div className="nav">
-        <div id="hov">Home</div>
-        <div id="hov">Courses</div>
-        <div id="hov">About Us</div>
-        <div id="hov">Contact Us</div>
+            <h1> Student Management</h1>
+            <Link to="/">Home</Link>
+            <Link to="/register">Register</Link>
+        
+            {/* <div id="hov">Register</div> */}
+            {/* <div id="hov">About Us</div>
+            <div id="hov">Contact Us</div> */}
         </div>
         
         <>
